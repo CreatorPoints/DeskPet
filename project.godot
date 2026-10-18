@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="DeskPet"
+run/main_scene="uid://cm8fdpc6rmjv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+specs="*uid://bwiw44l67raj"
 
 [display]
 
