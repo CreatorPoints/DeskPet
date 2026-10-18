@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://cm8fdpc6rmjv"]
+
+[ext_resource type="Texture2D" uid="uid://dr3pq2g6r2fvs" path="res://assets/qrcode.png" id="1_ots34"]
+[ext_resource type="Script" uid="uid://bwiw44l67raj" path="res://assets/scripts/scare/bsod.gd" id="1_qn1rc"]
+[ext_resource type="Script" uid="uid://svbiov7kg6in" path="res://assets/scripts/asciitux.gd" id="3_1n0d2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjvua"]
+font_size = 160
+
+[sub_resource type="LabelSettings" id="LabelSettings_h7sfv"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_3bjcw"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_5qdpb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v3hwd"]
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_8k612"]
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_supma"]
+font_size = 32
+
+[node name="start" type="Node2D" unique_id=1992545530]
+script = ExtResource("1_qn1rc")
+
+[node name="glitchMusic" type="AudioStreamPlayer2D" parent="." unique_id=1812387914]
+
+[node name="blackBG" type="ColorRect" parent="." unique_id=1634525788]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="BSOD" type="Control" parent="." unique_id=785164720]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="bg" type="ColorRect" parent="BSOD" unique_id=1116855839]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0.47058824, 0.84313726, 1)
+
+[node name="sad" type="Label" parent="BSOD" unique_id=1258796109]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 174.0
+offset_right = 330.0
+offset_bottom = 469.0
+text = ":("
+label_settings = SubResource("LabelSettings_gjvua")
+
+[node name="emotionalDamage" type="Label" parent="BSOD" unique_id=873549949]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 402.0
+offset_right = 1306.0
+offset_bottom = 573.0
+text = "Your PC ran into a problem and needs to restart. We're just collecting some error info, and then we'll restart for you."
+label_settings = SubResource("LabelSettings_h7sfv")
+autowrap_mode = 2
+
+[node name="percentage" type="Label" parent="BSOD" unique_id=661411841]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 612.0
+offset_right = 317.0
+offset_bottom = 635.0
+text = "20% Complete"
+label_settings = SubResource("LabelSettings_3bjcw")
+
+[node name="qrCode" type="TextureRect" parent="BSOD" unique_id=739101331]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 702.0
+offset_right = 314.0
+offset_bottom = 818.0
+texture = ExtResource("1_ots34")
+expand_mode = 1
+
+[node name="webLink" type="Label" parent="BSOD" unique_id=1332323469]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 700.0
+offset_right = 1103.0
+offset_bottom = 723.0
+text = "For more information about this issue and possible fixes, visit https://www.windows.com/stopcode"
+label_settings = SubResource("LabelSettings_5qdpb")
+
+[node name="support" type="Label" parent="BSOD" unique_id=571072584]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 770.0
+offset_right = 707.0
+offset_bottom = 793.0
+text = "If you call a support person, give them this info:"
+label_settings = SubResource("LabelSettings_v3hwd")
+
+[node name="stopcode" type="Label" parent="BSOD" unique_id=639652522]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 804.0
+offset_right = 614.0
+offset_bottom = 827.0
+text = "Stop code: CRITICAL_PROCESS_DIED"
+label_settings = SubResource("LabelSettings_8k612")
+
+[node name="kernelPanic" type="Control" parent="." unique_id=636711794]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="bg" type="ColorRect" parent="kernelPanic" unique_id=1596017908]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.46666667, 0.12941177, 0.43529412, 1)
+
+[node name="ASCII" type="Label" parent="kernelPanic" unique_id=1376469172]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+label_settings = SubResource("LabelSettings_supma")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_1n0d2")
