@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dr3pq2g6r2fvs" path="res://assets/qrcode.png" id="1_ots34"]
 [ext_resource type="Script" uid="uid://bwiw44l67raj" path="res://assets/scripts/spec.gd" id="1_qn1rc"]
 [ext_resource type="AudioStream" uid="uid://4ie476m4s6y3" path="res://assets/music/main-menu.wav" id="2_y5hus"]
-[ext_resource type="Script" uid="uid://svbiov7kg6in" path="res://assets/scripts/asciitux.gd" id="3_1n0d2"]
 [ext_resource type="Script" uid="uid://d1tksb26e6i5s" path="res://assets/scripts/scare/bsod.gd" id="3_oiuna"]
+[ext_resource type="Script" uid="uid://svbiov7kg6in" path="res://assets/scripts/scare/linuxlog.gd" id="4_oiuna"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gjvua"]
 font_size = 160
@@ -23,8 +23,10 @@ font_size = 14
 [sub_resource type="LabelSettings" id="LabelSettings_8k612"]
 font_size = 14
 
-[sub_resource type="LabelSettings" id="LabelSettings_supma"]
-font_size = 32
+[sub_resource type="SystemFont" id="SystemFont_4a3qj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oiuna"]
+font = SubResource("SystemFont_4a3qj")
 
 [node name="start" type="Node2D" unique_id=1992545530]
 script = ExtResource("1_qn1rc")
@@ -112,26 +114,25 @@ text = "Stop code: CRITICAL_PROCESS_DIED"
 label_settings = SubResource("LabelSettings_8k612")
 
 [node name="kernelPanic" type="Control" parent="." unique_id=636711794]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="bg" type="ColorRect" parent="kernelPanic" unique_id=1596017908]
+[node name="bg" type="ColorRect" parent="kernelPanic" unique_id=1711487205]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0.46666667, 0.12941177, 0.43529412, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="ASCII" type="Label" parent="kernelPanic" unique_id=1376469172]
+[node name="logs" type="Label" parent="kernelPanic" unique_id=609716341]
+custom_maximum_size = Vector2(1920, 1080)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-label_settings = SubResource("LabelSettings_supma")
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("3_1n0d2")
+label_settings = SubResource("LabelSettings_oiuna")
+autowrap_mode = 1
+script = ExtResource("4_oiuna")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1659382956]
 stream = ExtResource("2_y5hus")
