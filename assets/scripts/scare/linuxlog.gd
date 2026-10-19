@@ -2,9 +2,6 @@
 extends Label
 
 func error() -> void:
-	print("method called")
-	text = "lol"
-	await get_tree().create_timer(2.0).timeout
 	text ="nvme 0000:dc:00.0: I/O 200 QID 1 timeout, aborting
 nvme 0000:dc:00.0: I/O 201 QID 1 timeout, aborting
 BUG: unable to handle kernel NULL pointer dereference at 0000000000000048
@@ -54,11 +51,9 @@ Call Trace:
 [<ffffffff81696418>] ret_from_fork+0x58/0x90
 [<ffffffff810b0460>] ? kthread_create_on_node+0x140/0x140
 [55012.807255] Code: 00 00 48 83 f9 01 b9 08 00 00 00 f3 48 ab 41 8b 87 10 01 00 00 45 19 c0 83 e2 01 f7 da 41 f7 d0 83 c2 02 41 83 e0 07 66 89 45 92 <41> 8b 46 48 88 55 90 41 8b 56 4c 89 45 94 49 8b 47 68 8d 4a f7 "
-	print("yep")
 	await get_tree().create_timer(0.001054).timeout
 	text += "\n[55012.808309] RIP  [<ffffffffa011e82f>] nvme_queue_rq+0x2af/0xa70 [nvme]"
-	print("not await error")
-	#await get_tree().create_timer(0.000500).timeout
+	await get_tree().create_timer(0.000500).timeout
 	text += "\n[55012.808808]  RSP <ffff88205df3bab8>"
-	#await get_tree().create_timer(0.000476).timeout
+	await get_tree().create_timer(0.000476).timeout
 	text += "\n[55012.809284] CR2: 0000000000000048"

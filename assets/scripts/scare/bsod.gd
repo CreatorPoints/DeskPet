@@ -1,7 +1,7 @@
 extends Control
 
 @onready var bsod = $"."
-@onready var kpanic = $"../kernelPanic"
+@onready var panicBg = $"../kernelPanic/bg"
 @onready var music = $"../AudioStreamPlayer"
 @onready var bg = $"../blackBG"
 @onready var progress = $percentage
@@ -9,26 +9,28 @@ extends Control
 func _ready() -> void:
 	var os = specs.getOS()
 	bsod.visible = false
-	kpanic.visible = false
+	panicBg.visible = false
 	bg.visible = true
 	music.play()
 	await get_tree().create_timer(6.82).timeout
-	# overwrite os for local testing
-	#os = "windows"
 	if os == "windows":
-		bg.visible = false
 		bsod.visible = true
-		kpanic.visible = false
+		panicBg.visible = false
+		bg.visible = false
 		await get_tree().create_timer(2.0).timeout
 		windowsMode()
 	elif os == "linux":
-		bg.visible = false
 		bsod.visible = false
-		kpanic.visible = true
+		panicBg.visible = false
+		bg.visible = false
 		plog.error()
-		linapi.monitor("off")
 		await get_tree().create_timer(2.0).timeout
-		linapi.monitor("on") #it lags a bit. idk why
+		linapi.monitor("off")
+		await get_tree().create_timer(0.5).timeout
+		linapi.monitor("on")
+		get_tree().change_scene_to_file("res://assets/scenes/BIOS.tscn")
+		linapi.lock()
+		
 
 func windowsMode() -> void:
 	progress.text = "40% Complete"

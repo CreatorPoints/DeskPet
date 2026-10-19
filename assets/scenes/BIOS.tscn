@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b6gt7lrnxn354"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0h57"]
+font_size = 24
+
+[sub_resource type="Theme" id="Theme_spsd1"]
+Control/colors/color = Color(0.26293245, 0.26293245, 0.26293245, 1)
+Panel/styles/panel = null
+
+[node name="bios" type="Node2D" unique_id=379861934]
+
+[node name="bg" type="ColorRect" parent="." unique_id=1768869395]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0.59607846, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1397503898]
+offset_left = 384.0
+offset_top = 8.0
+offset_right = 1141.0
+offset_bottom = 42.0
+text = "Aptio Setup Utility - Copyright (C) 2018 American Megatrends, Inc."
+label_settings = SubResource("LabelSettings_r0h57")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1525152153]
+offset_left = 57.0
+offset_top = 45.0
+offset_right = 124.0
+offset_bottom = 85.0
+theme = SubResource("Theme_spsd1")
+current_tab = 0
+
+[node name="Main" type="Panel" parent="TabContainer" unique_id=1040596227]
+layout_mode = 2
+metadata/_tab_index = 0

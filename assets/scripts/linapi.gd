@@ -1,8 +1,10 @@
 extends Node
 
-var os = specs.getOS()
 func monitor(state: String):
-	if state == "on" and os == "linux":
+	if state == "on":
 		OS.execute("xset", ["dpms", "force", "on"])
-	elif state == "off" and os == "linux":
+	elif state == "off":
 		OS.execute("xset", ["dpms", "force", "off"])
+
+func lock() -> void:
+	OS.execute("xfce4-screensaver-command", ["--lock"])
