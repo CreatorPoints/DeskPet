@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 specs="*uid://bwiw44l67raj"
 plog="*uid://svbiov7kg6in"
+winapi="*uid://cu3niyyvdbill"
+linapi="*uid://bqyyrjm386scx"
 
 [display]
 

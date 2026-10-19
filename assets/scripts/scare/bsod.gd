@@ -14,7 +14,7 @@ func _ready() -> void:
 	music.play()
 	await get_tree().create_timer(6.82).timeout
 	# overwrite os for local testing
-	os = "windows"
+	#os = "windows"
 	if os == "windows":
 		bg.visible = false
 		bsod.visible = true
@@ -26,6 +26,9 @@ func _ready() -> void:
 		bsod.visible = false
 		kpanic.visible = true
 		plog.error()
+		linapi.monitor("off")
+		await get_tree().create_timer(2.0).timeout
+		linapi.monitor("on") #it lags a bit. idk why
 
 func windowsMode() -> void:
 	progress.text = "40% Complete"
