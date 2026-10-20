@@ -13,6 +13,7 @@ config_version=5
 config/name="DeskPet"
 run/main_scene="uid://cm8fdpc6rmjv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
 [autoload]

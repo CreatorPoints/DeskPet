@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://b6gt7lrnxn354"]
 
 [ext_resource type="FontFile" uid="uid://crgyl3fnbviki" path="res://assets/others/AcPlus_IBM_VGA_8x16.ttf" id="1_noxb7"]
+[ext_resource type="Script" uid="uid://bxqxa6fdkkat1" path="res://assets/scripts/bios.gd" id="1_t73ye"]
 [ext_resource type="Theme" uid="uid://bm4gm6dx5oqb7" path="res://assets/others/BIOS.tres" id="2_1ejjb"]
+[ext_resource type="LabelSettings" uid="uid://7kacukx1hvk2" path="res://assets/others/bios_text.tres" id="3_5koww"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r0h57"]
 font = ExtResource("1_noxb7")
@@ -15,11 +17,15 @@ font_color = Color(0, 0, 0, 1)
 font_size = 43
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_3bjcw"]
+[sub_resource type="LabelSettings" id="LabelSettings_5qdpb"]
 font_size = 43
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_5qdpb"]
+[sub_resource type="LabelSettings" id="LabelSettings_8k612"]
+font_size = 43
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3bjcw"]
 font_size = 43
 font_color = Color(0, 0, 0, 1)
 
@@ -27,14 +33,20 @@ font_color = Color(0, 0, 0, 1)
 font_size = 43
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gjvua"]
+color = Color(0, 0, 0.6666667, 1)
+thickness = 8
+vertical = true
+
 [node name="bios" type="Node2D" unique_id=379861934]
+script = ExtResource("1_t73ye")
 
 [node name="bg" type="ColorRect" parent="." unique_id=1768869395]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0.59607846, 1)
 
-[node name="Label" type="Label" parent="." unique_id=1397503898]
+[node name="aptio" type="Label" parent="." unique_id=1397503898]
 offset_left = 384.0
 offset_top = 8.0
 offset_right = 1141.0
@@ -53,47 +65,163 @@ current_tab = 0
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="biosInfo" type="Label" parent="TabContainer/Main" unique_id=291302059]
+[node name="left" type="VBoxContainer" parent="TabContainer/Main" unique_id=1690807805]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 20.0
-offset_right = 335.0
-offset_bottom = 64.0
+offset_right = 88.0
+offset_bottom = 60.0
+theme_override_constants/separation = 0
+
+[node name="biosInfo" type="Label" parent="TabContainer/Main/left" unique_id=291302059]
+layout_mode = 2
 text = "BIOS Information"
 label_settings = SubResource("LabelSettings_gjvua")
 
-[node name="biosVendor" type="Label" parent="TabContainer/Main" unique_id=1934833547]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 63.0
-offset_right = 263.0
-offset_bottom = 107.0
+[node name="biosVendor" type="Label" parent="TabContainer/Main/left" unique_id=1934833547]
+layout_mode = 2
 text = "BIOS Vendor:"
 label_settings = SubResource("LabelSettings_h7sfv")
 
-[node name="vendor" type="Label" parent="TabContainer/Main" unique_id=121896234]
+[node name="version" type="Label" parent="TabContainer/Main/left" unique_id=62484198]
+layout_mode = 2
+text = "Version:"
+label_settings = SubResource("LabelSettings_5qdpb")
+
+[node name="gopVer" type="Label" parent="TabContainer/Main/left" unique_id=1192519067]
+layout_mode = 2
+text = "GOP Version"
+label_settings = SubResource("LabelSettings_8k612")
+
+[node name="ecVer" type="Label" parent="TabContainer/Main/left" unique_id=2006086765]
+layout_mode = 2
+text = "EC Version"
+label_settings = ExtResource("3_5koww")
+
+[node name="space" type="Label" parent="TabContainer/Main/left" unique_id=1652177817]
+layout_mode = 2
+
+[node name="procInfo" type="Label" parent="TabContainer/Main/left" unique_id=23388868]
+layout_mode = 2
+text = "Processor Information"
+label_settings = ExtResource("3_5koww")
+
+[node name="space2" type="Label" parent="TabContainer/Main/left" unique_id=461627459]
+layout_mode = 2
+
+[node name="space3" type="Label" parent="TabContainer/Main/left" unique_id=1006894391]
+layout_mode = 2
+
+[node name="memInfo" type="Label" parent="TabContainer/Main/left" unique_id=1857318181]
+layout_mode = 2
+text = "Memory Information"
+label_settings = ExtResource("3_5koww")
+
+[node name="totalMem" type="Label" parent="TabContainer/Main/left" unique_id=1056380525]
+layout_mode = 2
+text = "Total Memory"
+label_settings = ExtResource("3_5koww")
+
+[node name="space4" type="Label" parent="TabContainer/Main/left" unique_id=357829827]
+layout_mode = 2
+
+[node name="sysInfo" type="Label" parent="TabContainer/Main/left" unique_id=76609232]
+layout_mode = 2
+text = "System Information"
+label_settings = ExtResource("3_5koww")
+
+[node name="serialNum" type="Label" parent="TabContainer/Main/left" unique_id=567142628]
+layout_mode = 2
+text = "Serial Number"
+label_settings = ExtResource("3_5koww")
+
+[node name="space5" type="Label" parent="TabContainer/Main/left" unique_id=1907607081]
+layout_mode = 2
+
+[node name="right" type="VBoxContainer" parent="TabContainer/Main" unique_id=231168013]
 layout_mode = 0
 offset_left = 792.0
 offset_top = 63.0
-offset_right = 1132.0
-offset_bottom = 107.0
+offset_right = 1172.0
+offset_bottom = 327.0
+theme_override_constants/separation = 0
+
+[node name="vendor" type="Label" parent="TabContainer/Main/right" unique_id=121896234]
+layout_mode = 2
 text = "American Megatrends"
 label_settings = SubResource("LabelSettings_3bjcw")
 
-[node name="gopVersion" type="Label" parent="TabContainer/Main" unique_id=62484198]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 105.0
-offset_right = 263.0
-offset_bottom = 149.0
-text = "GOP Version:"
-label_settings = SubResource("LabelSettings_5qdpb")
-
-[node name="gop" type="Label" parent="TabContainer/Main" unique_id=1506590381]
-layout_mode = 0
-offset_left = 792.0
-offset_top = 105.0
-offset_right = 846.0
-offset_bottom = 149.0
+[node name="ver" type="Label" parent="TabContainer/Main/right" unique_id=1506590381]
+layout_mode = 2
 text = "234"
 label_settings = SubResource("LabelSettings_v3hwd")
+
+[node name="gop" type="Label" parent="TabContainer/Main/right" unique_id=884099102]
+layout_mode = 2
+text = "3.0.14.1015"
+label_settings = ExtResource("3_5koww")
+
+[node name="ec" type="Label" parent="TabContainer/Main/right" unique_id=1990841742]
+layout_mode = 2
+text = "233"
+label_settings = ExtResource("3_5koww")
+
+[node name="space" type="Label" parent="TabContainer/Main/right" unique_id=940740724]
+layout_mode = 2
+
+[node name="proc" type="Label" parent="TabContainer/Main/right" unique_id=929295232]
+layout_mode = 2
+text = "finding it..."
+label_settings = ExtResource("3_5koww")
+autowrap_mode = 1
+
+[node name="space2" type="Label" parent="TabContainer/Main/right" unique_id=269946070]
+layout_mode = 2
+
+[node name="space3" type="Label" parent="TabContainer/Main/right" unique_id=1091372359]
+layout_mode = 2
+
+[node name="ram" type="Label" parent="TabContainer/Main/right" unique_id=75688272]
+layout_mode = 2
+text = "finding it..."
+label_settings = ExtResource("3_5koww")
+
+[node name="space4" type="Label" parent="TabContainer/Main/right" unique_id=1794857368]
+layout_mode = 2
+
+[node name="space5" type="Label" parent="TabContainer/Main/right" unique_id=200131588]
+layout_mode = 2
+
+[node name="sys" type="Label" parent="TabContainer/Main/right" unique_id=941098141]
+layout_mode = 2
+text = "CCN0CJ531190528"
+label_settings = ExtResource("3_5koww")
+
+[node name="VSeparator" type="VSeparator" parent="TabContainer/Main" unique_id=1549136899]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 0
+offset_left = 1280.0
+offset_top = -6.0
+offset_right = 1292.0
+offset_bottom = 930.0
+theme_override_styles/separator = SubResource("StyleBoxLine_gjvua")
+
+[node name="Advanced" type="Panel" parent="TabContainer" unique_id=1175796991]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Boot" type="Panel" parent="TabContainer" unique_id=1290596137]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Security" type="Panel" parent="TabContainer" unique_id=999813311]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Save & Exit" type="Panel" parent="TabContainer" unique_id=551734742]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4

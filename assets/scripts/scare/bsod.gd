@@ -29,7 +29,7 @@ func _ready() -> void:
 		await get_tree().create_timer(0.5).timeout
 		linapi.monitor("on")
 		get_tree().change_scene_to_file("res://assets/scenes/BIOS.tscn")
-		linapi.lock()
+		
 		
 
 func windowsMode() -> void:
