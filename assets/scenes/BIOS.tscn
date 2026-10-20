@@ -1,11 +1,31 @@
 [gd_scene format=3 uid="uid://b6gt7lrnxn354"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_r0h57"]
-font_size = 24
+[ext_resource type="FontFile" uid="uid://crgyl3fnbviki" path="res://assets/others/AcPlus_IBM_VGA_8x16.ttf" id="1_noxb7"]
+[ext_resource type="Theme" uid="uid://bm4gm6dx5oqb7" path="res://assets/others/BIOS.tres" id="2_1ejjb"]
 
-[sub_resource type="Theme" id="Theme_spsd1"]
-Control/colors/color = Color(0.26293245, 0.26293245, 0.26293245, 1)
-Panel/styles/panel = null
+[sub_resource type="LabelSettings" id="LabelSettings_r0h57"]
+font = ExtResource("1_noxb7")
+font_size = 43
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjvua"]
+font_size = 43
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h7sfv"]
+font_size = 43
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3bjcw"]
+font_size = 43
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5qdpb"]
+font_size = 43
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v3hwd"]
+font_size = 43
+font_color = Color(0, 0, 0, 1)
 
 [node name="bios" type="Node2D" unique_id=379861934]
 
@@ -23,13 +43,57 @@ text = "Aptio Setup Utility - Copyright (C) 2018 American Megatrends, Inc."
 label_settings = SubResource("LabelSettings_r0h57")
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=1525152153]
-offset_left = 57.0
-offset_top = 45.0
-offset_right = 124.0
-offset_bottom = 85.0
-theme = SubResource("Theme_spsd1")
+offset_top = 43.0
+offset_right = 1920.0
+offset_bottom = 1037.0
+theme = ExtResource("2_1ejjb")
 current_tab = 0
 
 [node name="Main" type="Panel" parent="TabContainer" unique_id=1040596227]
 layout_mode = 2
 metadata/_tab_index = 0
+
+[node name="biosInfo" type="Label" parent="TabContainer/Main" unique_id=291302059]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 20.0
+offset_right = 335.0
+offset_bottom = 64.0
+text = "BIOS Information"
+label_settings = SubResource("LabelSettings_gjvua")
+
+[node name="biosVendor" type="Label" parent="TabContainer/Main" unique_id=1934833547]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 63.0
+offset_right = 263.0
+offset_bottom = 107.0
+text = "BIOS Vendor:"
+label_settings = SubResource("LabelSettings_h7sfv")
+
+[node name="vendor" type="Label" parent="TabContainer/Main" unique_id=121896234]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 63.0
+offset_right = 1132.0
+offset_bottom = 107.0
+text = "American Megatrends"
+label_settings = SubResource("LabelSettings_3bjcw")
+
+[node name="gopVersion" type="Label" parent="TabContainer/Main" unique_id=62484198]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 105.0
+offset_right = 263.0
+offset_bottom = 149.0
+text = "GOP Version:"
+label_settings = SubResource("LabelSettings_5qdpb")
+
+[node name="gop" type="Label" parent="TabContainer/Main" unique_id=1506590381]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 105.0
+offset_right = 846.0
+offset_bottom = 149.0
+text = "234"
+label_settings = SubResource("LabelSettings_v3hwd")

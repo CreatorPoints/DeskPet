@@ -1,0 +1,246 @@
+[gd_resource type="Theme" format=3 uid="uid://bm4gm6dx5oqb7"]
+
+[ext_resource type="FontFile" uid="uid://crgyl3fnbviki" path="res://assets/others/AcPlus_IBM_VGA_8x16.ttf" id="1_5ej6k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bios_modal_popup"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0, 0, 0.666667, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(8, 16)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bios_item_normal"]
+content_margin_left = 4.0
+content_margin_top = 1.0
+content_margin_right = 4.0
+content_margin_bottom = 1.0
+bg_color = Color(0.666667, 0.666667, 0.666667, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bios_item_selected_ami"]
+content_margin_left = 4.0
+content_margin_top = 1.0
+content_margin_right = 4.0
+content_margin_bottom = 1.0
+bg_color = Color(0, 0, 0.666667, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bios_item_selected_award_red"]
+content_margin_left = 4.0
+content_margin_top = 1.0
+content_margin_right = 4.0
+content_margin_bottom = 1.0
+bg_color = Color(0.666667, 0, 0, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_bios_separator"]
+color = Color(0, 0, 0.666667, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_none"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bios_main_panel"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.666667, 0.666667, 0.666667, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0.666667, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bios_modal_button_focus"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bios_tab_unselected"]
+content_margin_left = 12.0
+content_margin_top = 2.0
+content_margin_right = 12.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0.666667, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bios_tab_selected"]
+content_margin_left = 12.0
+content_margin_top = 2.0
+content_margin_right = 12.0
+content_margin_bottom = 2.0
+bg_color = Color(0.666667, 0.666667, 0.666667, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bios_header_bar"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0.666667, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bios_scrollbar_grabber"]
+bg_color = Color(0.666667, 0.666667, 0.666667, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bios_scrollbar_bg"]
+bg_color = Color(0.666667, 0.666667, 0.666667, 1)
+anti_aliasing = false
+
+[resource]
+default_font = ExtResource("1_5ej6k")
+default_font_size = 43
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_bios_modal_popup")
+Button/colors/font_color = Color(0, 0, 0.666667, 1)
+Button/colors/font_disabled_color = Color(0.333333, 0.333333, 0.333333, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 0.333333, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_5ej6k")
+Button/styles/disabled = SubResource("StyleBoxFlat_bios_item_normal")
+Button/styles/focus = SubResource("StyleBoxFlat_bios_item_selected_ami")
+Button/styles/hover = SubResource("StyleBoxFlat_bios_item_selected_ami")
+Button/styles/normal = SubResource("StyleBoxFlat_bios_item_normal")
+Button/styles/pressed = SubResource("StyleBoxFlat_bios_item_selected_award_red")
+CheckBox/colors/font_color = Color(0, 0, 0.666667, 1)
+CheckBox/colors/font_disabled_color = Color(0.333333, 0.333333, 0.333333, 1)
+CheckBox/colors/font_focus_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_hover_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_pressed_color = Color(1, 1, 1, 1)
+CheckBox/fonts/font = ExtResource("1_5ej6k")
+CheckBox/styles/focus = SubResource("StyleBoxFlat_bios_item_selected_ami")
+CheckBox/styles/hover = SubResource("StyleBoxFlat_bios_item_selected_ami")
+CheckBox/styles/normal = SubResource("StyleBoxFlat_bios_item_normal")
+CheckBox/styles/pressed = SubResource("StyleBoxFlat_bios_item_selected_ami")
+HSeparator/constants/separation = 8
+HSeparator/styles/separator = SubResource("StyleBoxLine_bios_separator")
+ItemList/colors/font_Hovered_color = Color(1, 1, 1, 1)
+ItemList/colors/font_color = Color(0, 0, 0.666667, 1)
+ItemList/colors/font_selected_color = Color(1, 1, 1, 1)
+ItemList/colors/guide_color = Color(0, 0, 0, 0)
+ItemList/constants/v_separation = 2
+ItemList/fonts/font = ExtResource("1_5ej6k")
+ItemList/styles/cursor = SubResource("StyleBoxFlat_bios_item_selected_ami")
+ItemList/styles/cursor_unfocused = SubResource("StyleBoxFlat_bios_item_selected_ami")
+ItemList/styles/focus = SubResource("StyleBoxEmpty_none")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_bios_item_selected_ami")
+ItemList/styles/panel = SubResource("StyleBoxFlat_bios_main_panel")
+ItemList/styles/selected = SubResource("StyleBoxFlat_bios_item_selected_ami")
+ItemList/styles/selected_focus = SubResource("StyleBoxFlat_bios_item_selected_ami")
+Label/colors/font_color = Color(0, 0, 0.666667, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/fonts/font = ExtResource("1_5ej6k")
+Label/styles/normal = SubResource("StyleBoxEmpty_none")
+LineEdit/colors/caret_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_selected_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_uneditable_color = Color(0.333333, 0.333333, 0.333333, 1)
+LineEdit/colors/selection_color = Color(0.666667, 0.666667, 0.666667, 1)
+LineEdit/fonts/font = ExtResource("1_5ej6k")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_bios_modal_button_focus")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_bios_item_selected_ami")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_bios_item_normal")
+OptionButton/colors/font_color = Color(0, 0, 0.666667, 1)
+OptionButton/colors/font_disabled_color = Color(0.333333, 0.333333, 0.333333, 1)
+OptionButton/colors/font_focus_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_hover_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/fonts/font = ExtResource("1_5ej6k")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_bios_item_selected_ami")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_bios_item_selected_ami")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_bios_item_normal")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_bios_item_selected_ami")
+Panel/styles/panel = SubResource("StyleBoxFlat_bios_main_panel")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_bios_main_panel")
+PopupMenu/colors/font_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_disabled_color = Color(0.333333, 0.333333, 0.333333, 1)
+PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_separator_color = Color(1, 1, 1, 1)
+PopupMenu/fonts/font = ExtResource("1_5ej6k")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_bios_modal_button_focus")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_bios_modal_popup")
+PopupMenu/styles/separator = SubResource("StyleBoxLine_bios_separator")
+PopupPanel/styles/panel = SubResource("StyleBoxFlat_bios_modal_popup")
+RichTextLabel/colors/default_color = Color(0, 0, 0.666667, 1)
+RichTextLabel/colors/font_selected_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/selection_color = Color(0, 0, 0.666667, 1)
+RichTextLabel/fonts/bold_font = ExtResource("1_5ej6k")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_5ej6k")
+RichTextLabel/fonts/italics_font = ExtResource("1_5ej6k")
+RichTextLabel/fonts/mono_font = ExtResource("1_5ej6k")
+RichTextLabel/fonts/normal_font = ExtResource("1_5ej6k")
+RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_none")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_none")
+TabBar/colors/font_disabled_color = Color(0.333333, 0.333333, 0.333333, 1)
+TabBar/colors/font_hovered_color = Color(1, 1, 1, 1)
+TabBar/colors/font_selected_color = Color(0, 0, 0.666667, 1)
+TabBar/colors/font_unselected_color = Color(0.666667, 0.666667, 0.666667, 1)
+TabBar/constants/h_separation = 0
+TabBar/fonts/font = ExtResource("1_5ej6k")
+TabBar/styles/button_highlight = SubResource("StyleBoxEmpty_none")
+TabBar/styles/button_pressed = SubResource("StyleBoxEmpty_none")
+TabBar/styles/tab_disabled = SubResource("StyleBoxFlat_bios_tab_unselected")
+TabBar/styles/tab_focus = SubResource("StyleBoxEmpty_none")
+TabBar/styles/tab_hovered = SubResource("StyleBoxFlat_bios_tab_unselected")
+TabBar/styles/tab_selected = SubResource("StyleBoxFlat_bios_tab_selected")
+TabBar/styles/tab_unselected = SubResource("StyleBoxFlat_bios_tab_unselected")
+TabContainer/colors/font_disabled_color = Color(0.333333, 0.333333, 0.333333, 1)
+TabContainer/colors/font_hovered_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_selected_color = Color(0, 0, 0.666667, 1)
+TabContainer/colors/font_unselected_color = Color(0.666667, 0.666667, 0.666667, 1)
+TabContainer/constants/side_margin = 0
+TabContainer/fonts/font = ExtResource("1_5ej6k")
+TabContainer/styles/panel = SubResource("StyleBoxFlat_bios_main_panel")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxFlat_bios_tab_unselected")
+TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_none")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_bios_tab_unselected")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_bios_tab_selected")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_bios_tab_unselected")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_bios_header_bar")
+Tree/colors/children_hl_line_color = Color(0, 0, 0.666667, 1)
+Tree/colors/custom_button_font_highlight = Color(1, 1, 1, 1)
+Tree/colors/font_color = Color(0, 0, 0.666667, 1)
+Tree/colors/font_selected_color = Color(1, 1, 1, 1)
+Tree/colors/guide_color = Color(0, 0, 0, 0)
+Tree/colors/parent_hl_line_color = Color(0, 0, 0.666667, 1)
+Tree/colors/relationship_line_color = Color(0, 0, 0.666667, 1)
+Tree/colors/title_button_color = Color(0, 0, 0, 1)
+Tree/constants/draw_guides = 0
+Tree/constants/draw_relationship_lines = 0
+Tree/constants/v_separation = 2
+Tree/fonts/font = ExtResource("1_5ej6k")
+Tree/fonts/title_button_font = ExtResource("1_5ej6k")
+Tree/styles/cursor = SubResource("StyleBoxFlat_bios_item_selected_ami")
+Tree/styles/cursor_unfocused = SubResource("StyleBoxFlat_bios_item_selected_ami")
+Tree/styles/focus = SubResource("StyleBoxEmpty_none")
+Tree/styles/panel = SubResource("StyleBoxFlat_bios_main_panel")
+Tree/styles/selected = SubResource("StyleBoxFlat_bios_item_selected_ami")
+Tree/styles/selected_focus = SubResource("StyleBoxFlat_bios_item_selected_ami")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_bios_scrollbar_grabber")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_bios_scrollbar_grabber")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_bios_scrollbar_grabber")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_bios_scrollbar_bg")
+VSeparator/constants/separation = 8
+VSeparator/styles/separator = SubResource("StyleBoxLine_bios_separator")
+Window/colors/title_color = Color(1, 1, 1, 1)
+Window/fonts/title_font = ExtResource("1_5ej6k")
+Window/styles/embedded_border = SubResource("StyleBoxFlat_bios_modal_popup")
+Window/styles/embedded_unfocused_border = SubResource("StyleBoxFlat_bios_modal_popup")
